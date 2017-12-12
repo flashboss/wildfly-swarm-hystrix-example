@@ -1,5 +1,9 @@
 package org.wildfly.swarm.employee.api;
 
+import static java.lang.Math.random;
+import static java.lang.Thread.sleep;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +11,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import org.wildfly.swarm.employee.model.Employee;
 
@@ -15,19 +18,19 @@ import org.wildfly.swarm.employee.model.Employee;
 @Path("/employees")
 public class EmployeeController {
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(APPLICATION_JSON)
 	public List<Employee> findAll() {
 		if (true) {
 	        /* fail 20% of times */
-	        if (Math.random() > 0.8) {
+	        if (random() > 0.8) {
 	            throw new RuntimeException("random failure loading order over network");
 	        }
 
 	        /* latency spike 50% of the time */
-	        if (Math.random() > 0.5) {
+	        if (random() > 0.5) {
 	            // random latency spike
 	            try {
-	                Thread.sleep((int) (Math.random() * 2000) + 25);
+	                sleep((int) (random() * 2000) + 25);
 	            } catch (InterruptedException e) {
 	                // do nothing
 	            }
