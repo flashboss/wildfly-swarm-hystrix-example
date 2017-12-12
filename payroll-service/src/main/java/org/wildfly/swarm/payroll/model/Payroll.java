@@ -3,7 +3,10 @@ package org.wildfly.swarm.payroll.model;
 import java.io.Serializable;
 
 public class Payroll implements Serializable {
-    private Employee employee;
+	
+	private static final long serialVersionUID = 5775016838188055219L;
+
+	private Employee employee;
     
     private long salary;
 

@@ -35,6 +35,9 @@ public class EmployeeController {
 		}
 		
 		return new ArrayList<Employee>() {
+			
+			private static final long serialVersionUID = 8003977432905504763L;
+
 			{
 				add(new Employee(1L, "John"));
 				add(new Employee(2L, "Sarah"));

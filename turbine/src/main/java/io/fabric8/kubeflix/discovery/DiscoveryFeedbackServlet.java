@@ -12,7 +12,8 @@ import com.netflix.turbine.discovery.Instance;
 
 public class DiscoveryFeedbackServlet extends HttpServlet {
 
-    private static final OpenShiftDiscovery DISCOVERY = new OpenShiftDiscovery();
+	private static final long serialVersionUID = 3938604813394735854L;
+	private static final OpenShiftDiscovery DISCOVERY = new OpenShiftDiscovery();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
