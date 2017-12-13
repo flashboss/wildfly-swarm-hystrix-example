@@ -3,6 +3,7 @@ package org.wildfly.swarm.turbine;
 import static com.netflix.turbine.init.TurbineInit.init;
 import static com.netflix.turbine.init.TurbineInit.stop;
 import static com.netflix.turbine.plugins.PluginsFactory.setInstanceDiscovery;
+import static java.util.logging.Logger.getLogger;
 
 import java.util.logging.Logger;
 
@@ -13,7 +14,7 @@ import io.fabric8.kubeflix.discovery.OpenShiftDiscovery;
 
 public class StartTurbineServer implements ServletContextListener {
 
-    private static final Logger logger = Logger.getLogger(StartTurbineServer.class.getName());
+    private static final Logger logger = getLogger(StartTurbineServer.class.getName());
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
