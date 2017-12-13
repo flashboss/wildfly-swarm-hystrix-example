@@ -136,6 +136,7 @@
 										<arg>java</arg>
 										<arg>-jar</arg>
 										<arg>/opt/${project.artifactId}-${project.version}-swarm.jar</arg>
+										<arg>-Djava.net.preferIPv4Stack=true</arg>
 									</exec>
 								</entryPoint>
 								<assembly>
